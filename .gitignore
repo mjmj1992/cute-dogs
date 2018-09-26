@@ -1,0 +1,9 @@
+/.bundle
+/.idea
+/db/*.sqlite3
+/log/*.log
+/tmp
+temp.sql
+/config/*.yml
+.vscode
+.cache
