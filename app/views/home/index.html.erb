@@ -1,1 +1,12 @@
-<h1>Hello, Rails!</h1>
+<% if @member_signed_in %>
+    <h1>Hello <%= @current_member_email %>!</h1>
+<% else %>
+    <h1>Hello, Rails!</h1>    
+<% end %>
+
+
+<% if user_signed_in? %>
+    <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
+<% elsif admin_signed_in? %>
+    <%= link_to('Logout', destroy_admin_session_path, method: :delete) %> 
+<% end %>

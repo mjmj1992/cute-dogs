@@ -4,6 +4,11 @@ gem 'rails', '4.2.5'
 gem 'pg'
 
 gem 'turbolinks'
+gem 'devise'
+gem 'whenever'
+
+# API
+gem 'flickraw'
 
 # ASSETS
 gem 'sass-rails', '~> 5.0'
