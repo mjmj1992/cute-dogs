@@ -1,0 +1,10 @@
+<div id='photos'>
+    <% @view.photos.each do |photo| %>
+        <div class='photo' data-id="<%= photo.flickr_id %>">
+            <%= image_tag(photo.url_m, class: 'doggo-image') %>
+             <div class="middle-box">
+                <div class="middle-box--text">Vote!</div>
+            </div>
+        </div>
+    <% end %>
+</div>
