@@ -1,0 +1,48 @@
+#photos {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#photos .photo {
+    display: inline-block;
+    width: calc(50% - 32px);
+    height: 500px;
+    padding: 15px 0 30px 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+#photos .photo:hover .doggo-image {
+    opacity: 0.65;
+}
+  
+#photos .photo:hover .middle-box {
+    opacity: 1;
+}
+
+#photos .photo > .doggo-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+}
+
+.middle-box {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  cursor: pointer;
+}
+.middle-box--text {
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}

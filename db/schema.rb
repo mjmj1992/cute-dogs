@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180927140440) do
     t.string   "flickr_id",      default: "", null: false
     t.string   "flickr_owner",   default: "", null: false
     t.string   "title"
-    t.string   "dateupload",     default: "", null: false
+    t.datetime "dateupload",                  null: false
     t.string   "url_o",          default: "", null: false
     t.string   "url_m",          default: "", null: false
     t.string   "url_s",          default: "", null: false

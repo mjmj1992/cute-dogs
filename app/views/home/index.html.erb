@@ -1,14 +1,1 @@
-<% if user_signed_in? %>
-    <%= link_to('Logout', destroy_user_session_path, method: :delete) %> 
-<% elsif admin_signed_in? %>
-    <%= link_to('Logout', destroy_admin_session_path, method: :delete) %> 
-<% end %>
-
-<% if @view.member_signed_in? %>
-    <h1>Hello <%= @view.current_member_email %>!</h1>
-<% else %>
-    <h1>Hello, Rails!</h1>    
-<% end %>
-
-
 <%= render "photos" %>

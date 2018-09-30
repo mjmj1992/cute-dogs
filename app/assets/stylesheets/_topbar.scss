@@ -1,0 +1,20 @@
+#topbar {
+    width: 94%;
+    height: 80px;
+    background-color: dimgray;
+    padding: 0 3%;
+}
+#topbar .logout-cnt, #topbar .hello-cnt, #topbar .doggos-index-cnt, #topbar .doggos-vote-cnt {
+    display: inline-block;
+}
+
+#topbar .hello-cnt {
+    float: left;
+}
+
+#topbar .logout-cnt, #topbar .doggos-index-cnt, #topbar .doggos-vote-cnt {
+    float: right;
+    font-size: 2em;
+    line-height: 80px;
+    margin-left: 20px;
+}

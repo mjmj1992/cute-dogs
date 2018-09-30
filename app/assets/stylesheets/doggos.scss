@@ -1,0 +1,61 @@
+
+#doggos, #doggos td, #doggos th {
+    border: 1px solid black;
+}
+
+#doggos, .btns-cnt {
+    width: 850px;
+    margin: 20px auto 0 auto;
+    border-collapse: collapse;
+}
+
+#doggos .doggo-img {
+    max-width: 300px;
+}
+
+#doggos td.doggo-img > img {
+    max-width: 300px;
+    height: 300px;
+}
+
+#doggos td {
+    text-align: center;
+}
+
+.btns-cnt .btn{
+    display: inline-block;
+    width: calc(25% - 43px);
+    padding: 0 10px;
+    text-align: center;
+    background:    #cccccc;
+    background:    -webkit-linear-gradient(#cccccc, #999999);
+    background:    linear-gradient(#cccccc, #999999);
+    border-radius: 5px;
+    padding:       8px 20px;
+    color:         #ffffff;
+    display:       inline-block;
+    text-shadow:   1px 1px #000000;
+}
+
+.btns-cnt .btn:not(.active) {
+    cursor: pointer;
+}
+
+.btns-cnt .btn {
+    display: inline-block;
+    width: calc(25% - 43px);
+    padding: 0 10px;
+    text-align: center;
+    background:    #cccccc;
+    background:    -webkit-linear-gradient(#cccccc, #999999);
+    background:    linear-gradient(#cccccc, #999999);
+    border-radius: 5px;
+    padding:       8px 20px;
+    color:         #ffffff;
+    display:       inline-block;
+    text-shadow:   1px 1px #000000;
+}
+
+.btns-cnt .btn:hover, .btns-cnt .btn.active {
+    background: gray;
+}

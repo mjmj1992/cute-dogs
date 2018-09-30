@@ -1,0 +1,9 @@
+<tbody>
+  <% @view.doggos.each do |doggo| %>
+      <tr>
+          <td class='doggo-img'><%= image_tag(doggo[:url_m]) %></td>
+          <td class='doggo-score'><%= doggo[:cuteness_score] %></td>
+          <td class='doggo-date'><%= doggo[:dateupload] %></td>
+      </tr>
+  <% end %> 
+</tbody>

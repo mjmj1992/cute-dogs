@@ -10,14 +10,14 @@ class FlickrService
     def self.get_new_doggos(opts = {})
         count = opts[:count] || 100
         page = opts[:page] || 1
-        photos = flickr.photos.search(text: 'dog', per_page: 100, page: page, extras: 'url_o,url_m,url_s,date_upload')
+        photos = flickr.photos.search(text: 'dog', per_page: 101, page: page, extras: 'url_o,url_m,url_s,date_upload', safe_search: 1 )
         invalid_count = 0
         photos.take(count).each do |photo|
             cute_doggo = CuteDoggo.new
             cute_doggo.flickr_id = photo.id
             cute_doggo.flickr_owner = photo.owner
             cute_doggo.title = photo.title
-            cute_doggo.dateupload = photo.dateupload
+            cute_doggo.dateupload = to_dateupload(photo.dateupload)
             cute_doggo.url_o = photo['url_o']
             cute_doggo.url_m = photo['url_m']
             cute_doggo.url_s = photo['url_s']
@@ -33,6 +33,12 @@ class FlickrService
         end
         return true
     end 
+
+    private 
+
+    def self.to_dateupload(dateupload)
+        Time.at(dateupload.to_i)
+    end
 
 end
   

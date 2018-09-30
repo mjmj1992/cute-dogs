@@ -1,0 +1,17 @@
+<div class='btns-cnt'>
+    <div class='btn active' data-date='today'> Today </div>
+    <div class='btn' data-date='week'> This week </div>
+    <div class='btn' data-date='month'> This month </div>
+    <div class='btn' data-date='overall'> Overall </div>
+</div>
+
+<table id='doggos'>
+    <thead>
+        <tr>
+            <th class='doggo-img'>Image</th>
+            <th class='doggo-score'>Cuteness score</th>
+            <th class='doggo-date'>Uploaded at</th>
+        </tr>
+    </thead>
+  <%= render 'table_rows'%>
+</table>

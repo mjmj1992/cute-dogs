@@ -3,3 +3,13 @@
 *= require_tree .
 *= require_self
 */
+
+
+body {
+    margin: 0px;
+    padding: 0px;
+  }
+
+body > .container {
+    padding: 0 3%;
+}

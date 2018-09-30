@@ -4,7 +4,7 @@ class CreateCuteDoggos < ActiveRecord::Migration
       t.string :flickr_id,         null: false, default: ""
       t.string :flickr_owner,      null: false, default: "", unique: true
       t.string :title
-      t.string :dateupload,        null: false, default: ""
+      t.datetime :dateupload,      null: false
       t.string :url_o,             null: false, default: ""
       t.string :url_m,             null: false, default: ""
       t.string :url_s,             null: false, default: ""

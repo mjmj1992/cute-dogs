@@ -23,3 +23,11 @@
     <%= link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider) %><br />
   <% end -%>
 <% end -%>
+
+<%- if resource_name == :user && controller_name == 'sessions' %>
+  <%= link_to "Log in as admin", new_session_path(:admin) %><br />
+<% end -%>
+
+<%- if resource_name == :admin && controller_name == 'sessions' %>
+  <%= link_to "Log in as user", new_session_path(:user) %><br />
+<% end -%>

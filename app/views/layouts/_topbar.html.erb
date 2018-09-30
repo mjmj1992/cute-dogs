@@ -1,0 +1,24 @@
+<div id='topbar'>
+    <div class='hello-cnt'>
+        <% if member_signed_in? %>
+            <h1>Hello <%= current_member_email %>!</h1>
+        <% else %>
+            <h1>Hello, stranger!</h1>    
+        <% end %>
+    </div>
+    <% if member_signed_in? %>
+        <div class='logout-cnt'>
+            <%= link_to('Logout', destroy_member_session_path, method: :delete) %> 
+        </div>
+        <% if admin_signed_in? && controller_name != 'home' %>
+            <div class='doggos-vote-cnt'>
+                <%= link_to('Doggo-vote', root_path, method: :get) %> 
+            </div>
+        <% end %>
+    <% end %>
+    <% if admin_signed_in? && controller_name != 'doggos' %>
+        <div class='doggos-index-cnt'>
+            <%= link_to('Doggos rating', doggos_index_path, method: :get) %> 
+        </div>
+    <% end %>
+</div>
