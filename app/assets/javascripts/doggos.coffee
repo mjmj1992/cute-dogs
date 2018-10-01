@@ -1,17 +1,21 @@
 $ ->
-    # $('.container').infiniteScroll({
-    #     path: '.pagination__next',
-    #     append: '.post',
-    #     history: false,
-    # });
+  if $('#doggos').length > 0 
 
-     $('.btns-cnt .btn').on 'click', (e) ->
+    bindInfiniteScroll = (date) ->
+        $(window).unbind('scroll')
+        $('#doggos').infiniteScroll(itemSelector: 'tr', dataPath: '/doggos/load_more_doggos', currentDate: date)
+		
+    bindInfiniteScroll('today')
+
+    $('#btns-cnt .btn').on 'click', (e) ->
         e.preventDefault()
         target = $(e.currentTarget)
         return if target.hasClass('active')
-        $('.btns-cnt .btn.active').removeClass('active')
+        $('#btns-cnt .btn.active').removeClass('active')
         target.addClass('active')
-        date = target.attr('data-date')        
+        date = target.attr('data-date')
         $.get '/doggos/index', {date: date}, (response) ->
-            response_html = $(response.html)
-            $('#doggos tbody').html(response_html.html())
+            response_html = response.html
+            $('#doggos tbody').html('')
+            $('#doggos tbody').html(response_html)
+            bindInfiniteScroll(date)

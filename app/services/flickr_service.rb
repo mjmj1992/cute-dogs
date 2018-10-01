@@ -8,11 +8,12 @@ class FlickrService
     flickr.access_secret = "ac365bc9c0d99a49"
 
     def self.get_new_doggos(opts = {})
-        count = opts[:count] || 100
+        count = 100
         page = opts[:page] || 1
-        photos = flickr.photos.search(text: 'dog', per_page: 101, page: page, extras: 'url_o,url_m,url_s,date_upload', safe_search: 1 )
-        invalid_count = 0
+        valid_count = opts[:valid_count] || 0
+        photos = flickr.photos.search(text: 'dog', per_page: count, page: page, extras: 'url_o,url_m,url_s,date_upload', safe_search: 1 )
         photos.take(count).each do |photo|
+            break if valid_count == count
             cute_doggo = CuteDoggo.new
             cute_doggo.flickr_id = photo.id
             cute_doggo.flickr_owner = photo.owner
@@ -23,13 +24,12 @@ class FlickrService
             cute_doggo.url_s = photo['url_s']
             if cute_doggo.valid?
                 cute_doggo.save
-            else 
-                invalid_count += 1
+                valid_count += 1 
             end
         end
-        if invalid_count > 0
+        unless valid_count == count
             page += 1
-            get_new_doggos({count: invalid_count, page: page})
+            get_new_doggos({page: page, valid_count: valid_count})
         end
         return true
     end 

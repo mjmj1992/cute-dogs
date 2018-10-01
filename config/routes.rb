@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'vote', to: 'home#vote'
 
   get 'doggos/index', to: 'doggos#index'
+  get 'doggos/load_more_doggos', to: 'doggos#load_more_doggos'
 
   root 'home#index'
 end

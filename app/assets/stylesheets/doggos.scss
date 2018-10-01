@@ -3,7 +3,7 @@
     border: 1px solid black;
 }
 
-#doggos, .btns-cnt {
+#doggos, #btns-cnt {
     width: 850px;
     margin: 20px auto 0 auto;
     border-collapse: collapse;
@@ -22,7 +22,7 @@
     text-align: center;
 }
 
-.btns-cnt .btn{
+#btns-cnt .btn{
     display: inline-block;
     width: calc(25% - 43px);
     padding: 0 10px;
@@ -37,11 +37,11 @@
     text-shadow:   1px 1px #000000;
 }
 
-.btns-cnt .btn:not(.active) {
+#btns-cnt .btn:not(.active) {
     cursor: pointer;
 }
 
-.btns-cnt .btn {
+#btns-cnt .btn {
     display: inline-block;
     width: calc(25% - 43px);
     padding: 0 10px;
@@ -56,6 +56,6 @@
     text-shadow:   1px 1px #000000;
 }
 
-.btns-cnt .btn:hover, .btns-cnt .btn.active {
+#btns-cnt .btn:hover, #btns-cnt .btn.active {
     background: gray;
 }

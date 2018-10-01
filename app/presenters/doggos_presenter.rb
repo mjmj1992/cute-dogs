@@ -1,5 +1,4 @@
 class DoggosPresenter < BasePresenter
-    # require 'date'
   
     def initialize(doggos)
         @doggos = doggos

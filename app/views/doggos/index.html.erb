@@ -1,4 +1,8 @@
-<div class='btns-cnt'>
+<% content_for :head do %>
+  <%= javascript_include_tag 'jquery.infiniteScroll' %>
+<% end %>
+
+<div id='btns-cnt'>
     <div class='btn active' data-date='today'> Today </div>
     <div class='btn' data-date='week'> This week </div>
     <div class='btn' data-date='month'> This month </div>
@@ -13,5 +17,7 @@
             <th class='doggo-date'>Uploaded at</th>
         </tr>
     </thead>
-  <%= render 'table_rows'%>
+    <tbody>
+        <%= render 'table_rows'%>
+    </tbody>
 </table>
