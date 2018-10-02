@@ -4,11 +4,12 @@ class DoggosController < ApplicationController
     def index
       if date = params[:date]
         doggos = DoggosService.getDoggosByTerm(date)
-        doggos = doggos.limit(10).order('cuteness_score DESC')
+        doggos = doggos.order('cuteness_score DESC').limit(10)
         @view = DoggosPresenter.new(doggos)
         render :json => {html: render_to_string(partial: 'table_rows')}
       else
-        doggos = CuteDoggo.limit(10).order('cuteness_score DESC')
+        doggos = DoggosService.getDoggosByTerm('today')
+        doggos = doggos.order('cuteness_score DESC').limit(10)
         @view = DoggosPresenter.new(doggos)
       end
     end

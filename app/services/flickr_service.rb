@@ -11,7 +11,15 @@ class FlickrService
         count = 100
         page = opts[:page] || 1
         valid_count = opts[:valid_count] || 0
-        photos = flickr.photos.search(text: 'dog', per_page: count, page: page, extras: 'url_o,url_m,url_s,date_upload', safe_search: 1 )
+        params = {
+            text: 'dog',
+            per_page: count,
+            page: page,
+            extras: 'url_o,url_m,url_s,date_upload',
+            safe_search: 1,
+            tags: 'dog,animal,cute'
+        }
+        photos = flickr.photos.search(params)
         photos.take(count).each do |photo|
             break if valid_count == count
             cute_doggo = CuteDoggo.new

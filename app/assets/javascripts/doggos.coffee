@@ -3,7 +3,7 @@ $ ->
 
     bindInfiniteScroll = (date) ->
         $(window).unbind('scroll')
-        $('#doggos').infiniteScroll(itemSelector: 'tr', dataPath: '/doggos/load_more_doggos', currentDate: date)
+        $('#doggos').infiniteScroll(itemSelector: 'tbody > tr', dataPath: '/doggos/load_more_doggos', currentDate: date)
 		
     bindInfiniteScroll('today')
 
